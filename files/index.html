@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novex Performance | Peças de Alta Performance</title>
+  <meta name="description" content="Peças de alta performance desenvolvidas para extrair o máximo do seu projeto. Escape, admissão, combustível e ignição.">
+
+  <!-- Favicon: gerado a partir da estrela do logo, recortada e centralizada em fundo preto -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Fontes: Chakra Petch (títulos, com aquele corte técnico/racing) + Inter (texto corrido) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header__inner">
+
+      <a href="#" class="logo">
+        <img src="images/logo-novex.png" alt="Novex Performance">
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#tecnologia">Tecnologia</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" aria-label="Buscar">
+          <!-- ícone de busca (svg entra depois) -->
+          <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Carrinho">
+          <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count">0</span>
+        </button>
+        <a href="#" class="btn btn--pill">Entrar</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Tecnologia · Desempenho · Precisão</p>
+        <h1 class="hero__title">Designed to<br>push limits.</h1>
+        <p class="hero__text">Peças de alta performance desenvolvidas para extrair o máximo do seu projeto.</p>
+        <div class="hero__actions">
+          <a href="#produtos" class="btn btn--filled">Ver Produtos →</a>
+          <a href="#sobre" class="btn btn--outline">Saiba Mais</a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img src="images/coletor-novex.png" alt="Coletor de admissão Novex Performance" class="hero__image">
+        <div class="hero__badge">
+          <!-- selo circular "feito para performar" -->
+          <span>Feito para Performar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAIXA DE DESTAQUES ===== -->
+    <section class="highlights">
+      <ul class="highlights__list">
+        <li class="highlight">
+          <img src="images/star-secoes.jpg" alt="" class="highlight__icon">
+          <h3>Performance Comprovada</h3>
+          <p>Testado no limite. Aprovado na pista.</p>
+        </li>
+        <li class="highlight">
+          <img src="images/pill-secoes.jpg" alt="" class="highlight__icon">
+          <h3>Materiais Premium</h3>
+          <p>Ligas especiais e acabamento superior.</p>
+        </li>
+        <li class="highlight">
+          <img src="images/star-secoes.jpg" alt="" class="highlight__icon">
+          <h3>Engineered to Win</h3>
+          <p>Desenvolvido por quem vive performance.</p>
+        </li>
+        <li class="highlight">
+          <img src="images/pill-secoes.jpg" alt="" class="highlight__icon">
+          <h3>Envio para Todo Brasil</h3>
+          <p>Entregamos velocidade com segurança.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== LINHA DE PRODUTOS ===== -->
+    <section class="products" id="produtos">
+      <div class="products__header">
+        <h2>Linha de Produtos</h2>
+        <a href="#" class="link-arrow">Ver Todos →</a>
+      </div>
+
+      <ul class="product-grid">
+
+        <li class="product-card">
+          <img src="images/coletor-novex.png" alt="Coletor 4x1 Novex">
+          <p class="product-card__category">Escapamento</p>
+          <h3 class="product-card__name">Coletor 4x1 Novex</h3>
+          <div class="product-card__footer">
+            <span class="product-card__price">R$ 1.890,00</span>
+            <a href="#" class="icon-btn" aria-label="Ver produto">→</a>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <!-- Sem foto ainda — placeholder até você me enviar a imagem -->
+          <div class="product-card__image product-card__image--empty" aria-hidden="true"></div>
+          <p class="product-card__category">Admissão</p>
+          <h3 class="product-card__name">Piping 3" Novex</h3>
+          <div class="product-card__footer">
+            <span class="product-card__price">R$ 1.250,00</span>
+            <a href="#" class="icon-btn" aria-label="Ver produto">→</a>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <!-- Sem foto ainda — placeholder até você me enviar a imagem -->
+          <div class="product-card__image product-card__image--empty" aria-hidden="true"></div>
+          <p class="product-card__category">Combustível</p>
+          <h3 class="product-card__name">Filtro de Combustível Alta Vazão</h3>
+          <div class="product-card__footer">
+            <span class="product-card__price">R$ 480,00</span>
+            <a href="#" class="icon-btn" aria-label="Ver produto">→</a>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <!-- Sem foto ainda — placeholder até você me enviar a imagem -->
+          <div class="product-card__image product-card__image--empty" aria-hidden="true"></div>
+          <p class="product-card__category">Ignição</p>
+          <h3 class="product-card__name">Bobina de Ignição Performance</h3>
+          <div class="product-card__footer">
+            <span class="product-card__price">R$ 750,00</span>
+            <a href="#" class="icon-btn" aria-label="Ver produto">→</a>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ===== BANNER INSTITUCIONAL ===== -->
+    <section class="about-banner" id="sobre">
+      <div class="about-banner__media">
+        <img src="images/r35.png" alt="Nissan GT-R preparado com peças Novex Performance">
+      </div>
+      <div class="about-banner__content">
+        <p class="eyebrow">Para quem não aceita o comum</p>
+        <h2>Feito para quem<br>vive performance.</h2>
+        <p>Da rua para a pista. Nossas peças são projetadas para oferecer o máximo de potência, confiabilidade e estilo em qualquer projeto.</p>
+        <a href="#" class="btn btn--filled">Sobre a Novex →</a>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter" style="background-image: url('images/background.jpg');">
+      <div class="newsletter__content">
+        <h2>Receba as Novidades</h2>
+        <p>Cadastre-se e fique por dentro dos lançamentos e ofertas exclusivas.</p>
+      </div>
+      <form class="newsletter__form">
+        <label for="newsletter-email" class="sr-only">Seu melhor e-mail</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="Seu melhor e-mail" required>
+        <button type="submit" aria-label="Cadastrar e-mail">→</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contato">
+    <div class="footer__top">
+
+      <div class="footer__brand">
+        <img src="images/logo-novex.png" alt="Novex Performance">
+        <p>Elevando performance a outro nível.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="TikTok">TT</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+
+      <nav class="footer__col">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="#">Admissão</a></li>
+          <li><a href="#">Combustível</a></li>
+          <li><a href="#">Escape</a></li>
+          <li><a href="#">Ignição</a></li>
+          <li><a href="#">Gerenciamento</a></li>
+          <li><a href="#">Todos os produtos</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#">Sobre a Novex</a></li>
+          <li><a href="#">Tecnologia</a></li>
+          <li><a href="#">Garantia</a></li>
+          <li><a href="#">Trabalhe conosco</a></li>
+          <li><a href="#">Fale conosco</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col">
+        <h4>Suporte</h4>
+        <ul>
+          <li><a href="#">Minha conta</a></li>
+          <li><a href="#">Meus pedidos</a></li>
+          <li><a href="#">Trocas e devoluções</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Termos de uso</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col footer__contact">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@novexperformance.com">contato@novexperformance.com</a></li>
+          <li><a href="tel:+5511999999999">(11) 99999-9999</a></li>
+          <li>São Paulo - SP, Brasil</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Novex Performance. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

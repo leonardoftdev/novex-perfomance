@@ -1,0 +1,857 @@
+/* ===================================================================
+   NOVEX PERFORMANCE — style.css
+   Mobile-first: estilos base valem pro celular; @media (min-width)
+   vai "abrindo" o layout conforme a tela cresce.
+   =================================================================== */
+
+/* ---------- 1. RESET ---------- */
+/* Zera margens/paddings padrão do navegador e usa border-box em tudo,
+   pra padding e border não somarem à largura que a gente define. */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- 2. DESIGN TOKENS ---------- */
+:root {
+  /* Cores — preto profundo + prata, igual ao mockup */
+  --black: #050505;
+  --panel: #111113;
+  --panel-2: #1a1a1d;
+  --border: #29292d;
+  --white: #ffffff;
+  --silver-100: #f2f2f4;
+  --silver-300: #c6c6cc;
+  --silver-500: #8b8b91;
+  --silver-700: #5c5c61;
+
+  /* Tipografia */
+  --font-display: "Chakra Petch", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Espaçamento de seção — cresce com a tela via clamp() */
+  --section-padding-y: clamp(64px, 9vw, 120px);
+  --container-padding-x: 20px;
+  --container-max: 1280px;
+
+  /* Cantos */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-full: 999px;
+
+  /* Transição padrão pra hovers */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Respeita quem pede menos animação no sistema operacional */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- 3. BASE ---------- */
+body {
+  background: var(--black);
+  color: var(--silver-100);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--white);
+}
+
+/* Foco visível pra quem navega por teclado — acessibilidade básica */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--silver-100);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Container central com respiro lateral — usado em toda seção */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--silver-500);
+}
+
+/* ---------- 4. BOTÕES ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--filled {
+  background: linear-gradient(180deg, var(--white), var(--silver-300));
+  color: var(--black);
+}
+
+.btn--filled:hover {
+  background: var(--white);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--silver-100);
+  border: 1px solid var(--silver-700);
+}
+
+.btn--outline:hover {
+  border-color: var(--silver-100);
+}
+
+.btn--pill {
+  padding: 10px 22px;
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.85rem;
+}
+
+/* Botão circular só com ícone (busca, carrinho, seta do card) */
+.icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  color: var(--silver-100);
+  transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.icon-btn:hover {
+  border-color: var(--silver-100);
+  background: var(--panel-2);
+}
+
+.icon-btn svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.link-arrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--silver-300);
+  transition: color 0.25s var(--ease);
+}
+
+.link-arrow:hover {
+  color: var(--white);
+}
+
+/* ---------- 5. HEADER ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo img {
+  height: 28px;
+  width: auto;
+}
+
+/* Botão hambúrguer — só aparece no mobile (ver breakpoint no fim do arquivo) */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--silver-100);
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+/* Quando o JS marcar o botão como ativo, o hambúrguer vira um X */
+.menu-toggle.is-active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.is-active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Nav — no mobile some da tela até o JS abrir (classe .is-open) */
+.nav {
+  position: fixed;
+  inset: 73px 0 auto 0;
+  background: var(--black);
+  border-bottom: 1px solid var(--border);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease);
+}
+
+.nav.is-open {
+  max-height: 400px;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 20px 24px;
+}
+
+.nav__list a {
+  display: block;
+  padding: 14px 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--silver-300);
+  transition: color 0.25s var(--ease);
+}
+
+.nav__list a:hover {
+  color: var(--white);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- 6. HERO ---------- */
+.hero {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: calc(var(--section-padding-y) * 0.7) var(--container-padding-x) var(--section-padding-y);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.hero__title {
+  margin-top: 14px;
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  text-transform: uppercase;
+}
+
+.hero__text {
+  margin-top: 18px;
+  max-width: 46ch;
+  color: var(--silver-500);
+  font-size: 1.05rem;
+}
+
+.hero__actions {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero__media {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__image {
+  width: min(100%, 480px);
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6));
+  /* flutuação sutil — o produto "paira" devagar */
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* Selo circular "feito para performar" — gira devagar sobre o próprio eixo,
+   como um selo de garantia/certificação */
+.hero__badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 96px;
+  height: 96px;
+  border: 1px solid var(--silver-700);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  animation: spin 18s linear infinite;
+}
+
+.hero__badge span {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--silver-300);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- 7. FAIXA DE DESTAQUES ---------- */
+.highlights {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.highlights__list {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.highlight:last-child {
+  border-bottom: none;
+}
+
+.highlight__icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.highlight h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.highlight p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--silver-500);
+}
+
+/* ---------- 8. LINHA DE PRODUTOS ---------- */
+.products {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--section-padding-y) var(--container-padding-x);
+}
+
+.products__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.products__header h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  text-transform: uppercase;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--silver-700);
+}
+
+.product-card > img,
+.product-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: var(--black);
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+}
+
+/* Espaço reservado pra fotos de produto que ainda não existem */
+.product-card__image--empty {
+  border: 1px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card__image--empty::after {
+  content: "Foto em breve";
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--silver-500);
+}
+
+.product-card__category {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--silver-500);
+}
+
+.product-card__name {
+  margin-top: 8px;
+  font-size: 1.05rem;
+  min-height: 2.4em;
+}
+
+.product-card__footer {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-card__price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* ---------- 9. BANNER INSTITUCIONAL ---------- */
+.about-banner {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-banner__media img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.about-banner__content {
+  padding: 40px var(--container-padding-x);
+}
+
+.about-banner__content h2 {
+  margin-top: 12px;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  text-transform: uppercase;
+}
+
+.about-banner__content p {
+  margin-top: 16px;
+  max-width: 50ch;
+  color: var(--silver-500);
+}
+
+.about-banner__content .btn {
+  margin-top: 28px;
+}
+
+/* ---------- 10. NEWSLETTER ---------- */
+.newsletter {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: var(--section-padding-y) var(--container-padding-x);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Camada escura por cima da textura, pra o texto continuar legível */
+.newsletter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.newsletter__content,
+.newsletter__form {
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter__content h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  text-transform: uppercase;
+}
+
+.newsletter__content p {
+  margin-top: 8px;
+  color: var(--silver-300);
+}
+
+.newsletter__form {
+  display: flex;
+  gap: 10px;
+  max-width: 420px;
+}
+
+.newsletter__form input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--silver-700);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+}
+
+.newsletter__form input::placeholder {
+  color: var(--silver-500);
+}
+
+.newsletter__form button {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  font-size: 1.1rem;
+  transition: transform 0.25s var(--ease);
+}
+
+.newsletter__form button:hover {
+  transform: scale(1.08);
+}
+
+/* ---------- 11. FOOTER ---------- */
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: var(--section-padding-y);
+}
+
+.footer__top {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+}
+
+.footer__brand img {
+  height: 24px;
+}
+
+.footer__brand p {
+  margin-top: 14px;
+  color: var(--silver-500);
+  font-size: 0.9rem;
+  max-width: 30ch;
+}
+
+.footer__social {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: border-color 0.25s var(--ease);
+}
+
+.footer__social a:hover {
+  border-color: var(--silver-100);
+}
+
+.footer__col h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__col a,
+.footer__col li {
+  font-size: 0.9rem;
+  color: var(--silver-500);
+}
+
+.footer__col a:hover {
+  color: var(--white);
+}
+
+.footer__bottom {
+  border-top: 1px solid var(--border);
+  padding: 20px var(--container-padding-x);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--silver-500);
+}
+
+/* ===================================================================
+   BREAKPOINTS — mobile-first: só ADICIONA/AJUSTA regras conforme
+   a tela cresce, nunca precisa desfazer o que já foi escrito acima.
+   =================================================================== */
+
+/* ---------- Tablet (≥ 768px) ---------- */
+@media (min-width: 768px) {
+
+  .highlights__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .highlight {
+    border-right: 1px solid var(--border);
+    padding-inline: 20px;
+  }
+
+  .highlight:nth-child(2n) {
+    border-right: none;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-banner {
+    flex-direction: row;
+  }
+
+  .about-banner__media,
+  .about-banner__content {
+    flex: 1;
+  }
+
+  .about-banner__media img {
+    height: 100%;
+  }
+
+  .about-banner__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px;
+  }
+
+  .newsletter {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer__top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Desktop (≥ 1024px) ---------- */
+@media (min-width: 1024px) {
+
+  /* Nav volta a ficar visível e em linha; hambúrguer some */
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    background: none;
+    border-bottom: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    padding: 0;
+  }
+
+  .nav__list a {
+    padding: 0;
+    border-bottom: none;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    padding-block: var(--section-padding-y);
+  }
+
+  .hero__content {
+    flex: 1;
+  }
+
+  .hero__media {
+    flex: 1;
+  }
+
+  .highlights__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .highlight {
+    border-right: 1px solid var(--border);
+  }
+
+  .highlight:nth-child(2n) {
+    border-right: 1px solid var(--border);
+  }
+
+  .highlight:last-child {
+    border-right: none;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer__top {
+    grid-template-columns: 1.4fr repeat(4, 1fr);
+  }
+}
