@@ -387,25 +387,21 @@ input:focus-visible {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 96px;
-  height: 96px;
+  width: 100px;
+  height: 100px;
   border: 1px solid var(--silver-700);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 10px;
+  
   animation: spin 18s linear infinite;
 }
 
-.hero__badge span {
-  font-family: var(--font-display);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--silver-300);
+.hero__badge img {
+  height: 70px;
+  width: 70px;
 }
 
 @keyframes spin {
