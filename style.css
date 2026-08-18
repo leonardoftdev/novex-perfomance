@@ -737,9 +737,9 @@ input:focus-visible {
 @media (min-width: 768px) {
 
   .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/turbina-novex.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/turbina-novex.PNG);
     background-size: cover;
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
   }
 
