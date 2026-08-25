@@ -380,8 +380,7 @@ input:focus-visible {
   50% { transform: translateY(-14px); }
 }
 
-/* Selo circular "feito para performar" — gira devagar sobre o próprio eixo,
-   como um selo de garantia/certificação */
+/* Selo circular "feito para performar" */
 .hero__badge {
   position: absolute;
   bottom: 0;
@@ -411,14 +410,16 @@ input:focus-visible {
 
 /* ---------- 7. FAIXA DE DESTAQUES ---------- */
 .highlights {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  padding: 32px var(--container-padding-x);
 }
 
 .highlights__list {
   max-width: var(--container-max);
   margin-inline: auto;
-  padding-inline: var(--container-padding-x);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 4px 24px;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -427,38 +428,24 @@ input:focus-visible {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 28px 0;
+  padding: 24px 0;
   border-bottom: 1px solid var(--border);
 }
 
-.highlight:last-child {
-  border-bottom: none;
+.highlight__text {
+  min-width: 0;
 }
 
-.highlight__icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.highlight h3 {
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-
-.highlight p {
-  margin-top: 4px;
-  font-size: 0.9rem;
-  color: var(--silver-500);
-}
+.highlight:last-child { border-bottom: none; }
+.highlight__icon { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; }
+.highlight h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.02em; }
+.highlight p { margin-top: 4px; font-size: 0.9rem; color: var(--silver-500); }
 
 /* ---------- 8. LINHA DE PRODUTOS ---------- */
 .products {
   max-width: var(--container-max);
   margin-inline: auto;
-  padding: var(--section-padding-y) var(--container-padding-x);
+  padding: 40px var(--section-padding-y) var(--container-padding-x);
 }
 
 .products__header {
@@ -768,6 +755,7 @@ input:focus-visible {
   .highlight {
     border-right: 1px solid var(--border);
     padding-inline: 20px;
+    border-bottom: none;
   }
 
   .highlight:nth-child(2n) {
