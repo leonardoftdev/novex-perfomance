@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Novex Performance | Peças de Alta Performance</title>
-  <meta name="description" content="Peças de alta performance desenvolvidas para extrair o máximo do seu projeto. Escape, admissão, combustível e ignição.">
+  <meta name="description"
+    content="Peças de alta performance desenvolvidas para extrair o máximo do seu projeto. Escape, admissão, combustível e ignição.">
   <link rel="icon" href="favicon.ico" sizes="any">
 
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
@@ -13,10 +15,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- ===== HEADER ===== -->
@@ -46,10 +51,17 @@
       <div class="header__actions">
         <button class="icon-btn" aria-label="Buscar">
           <!-- ícone de busca (svg entra depois) -->
-          <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <circle cx="11" cy="11" r="7" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
         </button>
         <button class="icon-btn" aria-label="Carrinho">
-          <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+          </svg>
           <span class="cart-count">0</span>
         </button>
         <a href="#" class="btn btn--pill">Entrar</a>
@@ -180,22 +192,25 @@
       <div class="about-banner__content">
         <p class="eyebrow">Para quem não aceita o comum</p>
         <h2>Feito para quem<br>vive performance.</h2>
-        <p>Da rua para a pista. Nossas peças são projetadas para oferecer o máximo de potência, confiabilidade e estilo em qualquer projeto.</p>
+        <p>Da rua para a pista. Nossas peças são projetadas para oferecer o máximo de potência, confiabilidade e estilo
+          em qualquer projeto.</p>
         <a href="#" class="btn btn--filled">Sobre a Novex →</a>
       </div>
     </section>
 
     <!-- ===== NEWSLETTER ===== -->
     <section class="newsletter" style="background-image: url('images/background.jpg');">
-      <div class="newsletter__content">
-        <h2>Receba as Novidades</h2>
-        <p>Cadastre-se e fique por dentro dos lançamentos e ofertas exclusivas.</p>
+      <div class="newsletter__inner">
+        <div class="newsletter__content">
+          <h2>Receba as Novidades</h2>
+          <p>Cadastre-se e fique por dentro dos lançamentos e ofertas exclusivas.</p>
+        </div>
+        <form class="newsletter__form">
+          <label for="newsletter-email" class="sr-only">Seu melhor e-mail</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Seu melhor e-mail" required>
+          <button type="submit" aria-label="Cadastrar e-mail">→</button>
+        </form>
       </div>
-      <form class="newsletter__form">
-        <label for="newsletter-email" class="sr-only">Seu melhor e-mail</label>
-        <input type="email" id="newsletter-email" name="email" placeholder="Seu melhor e-mail" required>
-        <button type="submit" aria-label="Cadastrar e-mail">→</button>
-      </form>
     </section>
 
   </main>
@@ -205,7 +220,7 @@
     <div class="footer__top">
 
       <div class="footer__brand">
-        <img src="images/logo-novex.png" alt="Novex Performance">
+        <img src="images/logo-novex.PNG" alt="Novex Performance">
         <p>Elevando performance a outro nível.</p>
         <div class="footer__social">
           <a href="#" aria-label="Instagram">IG</a>
@@ -267,4 +282,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

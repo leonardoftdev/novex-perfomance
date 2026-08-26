@@ -335,6 +335,13 @@ input:focus-visible {
 
 /* ---------- 6. HERO ---------- */
 .hero {
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/turbina-novex.PNG);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+
+
   max-width: var(--container-max);
   margin-inline: auto;
   padding: calc(var(--section-padding-y) * 0.7) var(--container-padding-x) var(--section-padding-y);
@@ -445,7 +452,7 @@ input:focus-visible {
 .products {
   max-width: var(--container-max);
   margin-inline: auto;
-  padding: 40px var(--section-padding-y) var(--container-padding-x);
+  padding: 40px var(--container-padding-x) var(--section-padding-y);
 }
 
 .products__header {
@@ -537,6 +544,8 @@ input:focus-visible {
 .about-banner {
   display: flex;
   flex-direction: column;
+  max-width: var(--container-max);
+  margin-inline: auto;
 }
 
 .about-banner__media img {
@@ -571,9 +580,6 @@ input:focus-visible {
   background-position: center;
   position: relative;
   padding: var(--section-padding-y) var(--container-padding-x);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
 /* Camada escura por cima da textura, pra o texto continuar legível */
@@ -584,10 +590,14 @@ input:focus-visible {
   background: rgba(0, 0, 0, 0.55);
 }
 
-.newsletter__content,
-.newsletter__form {
+.newsletter__inner {
   position: relative;
   z-index: 1;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .newsletter__content h2 {
@@ -784,9 +794,17 @@ input:focus-visible {
     flex-direction: column;
     justify-content: center;
     padding: 56px;
+    max-width: 460px;      /* ← novo: trava a largura do texto */
+    margin-inline: auto;   /* ← novo: centraliza esse bloco no vão */
   }
 
   .newsletter {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+    .newsletter__inner {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
