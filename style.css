@@ -79,7 +79,10 @@ input {
 
 /* Respeita quem pede menos animação no sistema operacional */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -96,7 +99,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   font-weight: 600;
   line-height: 1.1;
@@ -268,9 +274,11 @@ input:focus-visible {
 .menu-toggle.is-active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .menu-toggle.is-active span:nth-child(2) {
   opacity: 0;
 }
+
 .menu-toggle.is-active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
@@ -375,6 +383,7 @@ input:focus-visible {
   position: relative;
   display: flex;
   justify-content: center;
+  padding-top: 40px;
 }
 
 .hero__image {
@@ -383,8 +392,15 @@ input:focus-visible {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
 }
 
 /* Selo circular "feito para performar" */
@@ -400,7 +416,7 @@ input:focus-visible {
   align-items: center;
   justify-content: center;
   text-align: center;
-  
+
   animation: spin 18s linear infinite;
 }
 
@@ -411,8 +427,13 @@ input:focus-visible {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ---------- 7. FAIXA DE DESTAQUES ---------- */
@@ -443,16 +464,34 @@ input:focus-visible {
   min-width: 0;
 }
 
-.highlight:last-child { border-bottom: none; }
-.highlight__icon { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; }
-.highlight h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.02em; }
-.highlight p { margin-top: 4px; font-size: 0.9rem; color: var(--silver-500); }
+.highlight:last-child {
+  border-bottom: none;
+}
+
+.highlight__icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.highlight h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.highlight p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--silver-500);
+}
 
 /* ---------- 8. LINHA DE PRODUTOS ---------- */
 .products {
   max-width: var(--container-max);
   margin-inline: auto;
-  padding: 40px var(--container-padding-x) var(--section-padding-y);
+  padding: 50px;
 }
 
 .products__header {
@@ -487,7 +526,7 @@ input:focus-visible {
   border-color: var(--silver-700);
 }
 
-.product-card > img,
+.product-card>img,
 .product-card__image {
   width: 100%;
   height: 200px;
@@ -546,6 +585,18 @@ input:focus-visible {
   flex-direction: column;
   max-width: var(--container-max);
   margin-inline: auto;
+  margin-bottom: 50px;
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 4px 24px;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/r35.PNG);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+
 }
 
 .about-banner__media img {
@@ -579,7 +630,14 @@ input:focus-visible {
   background-size: cover;
   background-position: center;
   position: relative;
-  padding: var(--section-padding-y) var(--container-padding-x);
+  padding: 50px;
+  border-radius: var(--radius-md) var(--radius-md) 0px 0px;
+  border: 1px solid var(--border);
+
+  max-width: var(--container-max);
+  background: var(--panel);
+  margin-inline: auto;
+
 }
 
 /* Camada escura por cima da textura, pra o texto continuar legível */
@@ -623,6 +681,7 @@ input:focus-visible {
   border: 1px solid var(--silver-700);
   background: rgba(255, 255, 255, 0.06);
   color: var(--white);
+
 }
 
 .newsletter__form input::placeholder {
@@ -646,8 +705,11 @@ input:focus-visible {
 
 /* ---------- 11. FOOTER ---------- */
 .footer {
-  border-top: 1px solid var(--border);
-  padding-top: var(--section-padding-y);
+  border: 1px solid var(--border);
+  padding: 50px;
+
+  max-width: var(--container-max);
+  margin-inline: auto;
 }
 
 .footer__top {
@@ -778,6 +840,7 @@ input:focus-visible {
 
   .about-banner {
     flex-direction: row;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/r35.PNG);
   }
 
   .about-banner__media,
@@ -794,8 +857,10 @@ input:focus-visible {
     flex-direction: column;
     justify-content: center;
     padding: 56px;
-    max-width: 460px;      /* ← novo: trava a largura do texto */
-    margin-inline: auto;   /* ← novo: centraliza esse bloco no vão */
+    max-width: 460px;
+    /* ← novo: trava a largura do texto */
+    margin-inline: auto;
+    /* ← novo: centraliza esse bloco no vão */
   }
 
   .newsletter {
@@ -804,7 +869,7 @@ input:focus-visible {
     justify-content: space-between;
   }
 
-    .newsletter__inner {
+  .newsletter__inner {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -859,8 +924,8 @@ input:focus-visible {
     flex: 1;
     position: static;
   }
-  
-    .hero__badge {
+
+  .hero__badge {
     right: var(--container-padding-x);
     bottom: 24px;
   }
@@ -883,6 +948,11 @@ input:focus-visible {
 
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .newsletter__form {
+    max-width: 820px;
+    width: 720px;
   }
 
   .footer__top {
