@@ -576,6 +576,52 @@ input:focus-visible {
   color: var(--silver-500);
 }
 
+/* ---------- TECNOLOGIA ---------- */
+
+.tecnologic {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.tecnologic__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto 32px;
+  padding-inline: var(--container-padding-x);
+}
+
+.tecnologic__header h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  text-transform: uppercase;
+}
+
+.tecnologic-video {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  object-fit: contain;
+  display: block;
+
+  max-width: var(--container-max);
+  margin-inline: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+}
+
+.tecnologic-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
 /* ---------- 8. LINHA DE PRODUTOS ---------- */
 .products {
   max-width: var(--container-max);
