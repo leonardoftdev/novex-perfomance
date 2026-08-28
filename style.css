@@ -131,6 +131,11 @@ h4 {
   color: var(--white);
 }
 
+section[id],
+footer[id] {
+  scroll-margin-top: 90px;
+}
+
 /* === EFEITO DE CHROME === */
 .chrome-text {
   background: linear-gradient(
@@ -371,6 +376,32 @@ input:focus-visible {
   border-bottom: 1px solid var(--border);
   color: var(--silver-300);
   transition: color 0.25s var(--ease);
+}
+
+.nav__link {
+  position: relative;
+}
+
+.nav__list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--white);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.35s var(--ease);
+}
+
+.nav__list a:hover::after,
+.nav__list a.active::after {
+  transform: scaleX(1);
 }
 
 .nav__list a:hover {
