@@ -90,6 +90,28 @@ input {
   }
 }
 
+/* ---------- CURSOR SPOTLIGHT ---------- */
+
+.cursor-spot {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background: radial-gradient(
+    480px circle at var(--mx, 50%) var(--my, 20%),
+    rgba(255, 255, 255, 0.05),
+    transparent 60%
+  );
+
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+
+.cursor-spot.is-active {
+  opacity: 1;
+}
+
 /* ---------- 3. BASE ---------- */
 body {
   background: var(--black);
@@ -107,6 +129,42 @@ h4 {
   font-weight: 600;
   line-height: 1.1;
   color: var(--white);
+}
+
+/* === EFEITO DE CHROME === */
+.chrome-text {
+  background: linear-gradient(
+    100deg,
+    #5c5c61 15%,
+    #c6c6cc 30%,
+    #ffffff 40%,
+    #ffffff 50%,
+    #c6c6cc 60%,
+    #5c5c61 75%
+  );
+
+  background-size: 220% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation: chrome-shine 5s ease-in-out infinite;
+}
+
+@keyframes chrome-shine {
+  0% {
+    background-position: 130% 0;
+  }
+
+  55% {
+    background-position: -30% 0;
+  }
+
+  100% {
+    background-position: -55% 0;
+  }
 }
 
 /* Foco visível pra quem navega por teclado — acessibilidade básica */
@@ -599,12 +657,6 @@ input:focus-visible {
 
 }
 
-.about-banner__media img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-}
-
 .about-banner__content {
   padding: 40px var(--container-padding-x);
 }
@@ -651,8 +703,6 @@ input:focus-visible {
 .newsletter__inner {
   position: relative;
   z-index: 1;
-  max-width: var(--container-max);
-  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -715,7 +765,6 @@ input:focus-visible {
 .footer__top {
   max-width: var(--container-max);
   margin-inline: auto;
-  padding-inline: var(--container-padding-x);
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
@@ -787,6 +836,8 @@ input:focus-visible {
   color: var(--silver-500);
 }
 
+
+
 /* ===================================================================
    BREAKPOINTS — mobile-first: só ADICIONA/AJUSTA regras conforme
    a tela cresce, nunca precisa desfazer o que já foi escrito acima.
@@ -841,15 +892,6 @@ input:focus-visible {
   .about-banner {
     flex-direction: row;
       background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/r35.PNG);
-  }
-
-  .about-banner__media,
-  .about-banner__content {
-    flex: 1;
-  }
-
-  .about-banner__media img {
-    height: 100%;
   }
 
   .about-banner__content {

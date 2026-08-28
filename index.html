@@ -10,7 +10,6 @@
   <link rel="icon" href="favicon.ico" sizes="any">
 
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +22,9 @@
 </head>
 
 <body>
+
+  <!-- === SPOTLIGHT CURSOR === -->
+  <div class="cursor-spot" id="cursorSpot" aria-hidden="true"></div>
 
   <!-- ===== HEADER ===== -->
   <header class="header">
@@ -76,7 +78,9 @@
     <section class="hero" id="hero">
       <div class="hero__content">
         <p class="eyebrow">Tecnologia · Desempenho · Precisão</p>
-        <h1 class="hero__title">Designed to<br>push limits.</h1>
+        <h1 class="hero__title">
+          Designed to<br>
+          <span class="chrome-text">push limits.</span></h1>
         <p class="hero__text">Peças de alta performance desenvolvidas para extrair o máximo do seu projeto.</p>
         <div class="hero__actions">
           <a href="#produtos" class="btn btn--filled">Ver Produtos →</a>
@@ -147,7 +151,7 @@
 
         <li class="product-card">
           <!-- Sem foto ainda — placeholder até você me enviar a imagem -->
-          <img src="images/filtro-novex.PNG" aria-hidden="true">
+          <img src="images/filtro-novex.PNG" alt="Filtro de Ar">
           <p class="product-card__category">Admissão</p>
           <h3 class="product-card__name">Filtro de Ar Novex</h3>
           <div class="product-card__footer">
@@ -158,7 +162,7 @@
 
         <li class="product-card">
           <!-- Sem foto ainda — placeholder até você me enviar a imagem -->
-          <img src="images/novex-injection.PNG" aria-hidden="true">
+          <img src="images/novex-injection.PNG" alt="ECU Novex">
           <p class="product-card__category">Injeção</p>
           <h3 class="product-card__name">ECU Novex</h3>
           <div class="product-card__footer">
@@ -169,7 +173,7 @@
 
         <li class="product-card">
           <!-- Sem foto ainda — placeholder até você me enviar a imagem -->
-          <img src="images/turbo-novex.PNG" aria-hidden="true">
+          <img src="images/turbo-novex.PNG" alt="Turbina Novex">
           <p class="product-card__category">Turbo / Sobrealimentação</p>
           <h3 class="product-card__name">Turbina Novex</h3>
           <div class="product-card__footer">
@@ -186,7 +190,7 @@
 
       <div class="about-banner__content">
         <p class="eyebrow">Para quem não aceita o comum</p>
-        <h2>Feito para quem<br>vive performance.</h2>
+        <h2>Feito para quem<br>vive de <span class="chrome-text">performance.</span></h2>
         <p>Da rua para a pista. Nossas peças são projetadas para oferecer o máximo de potência, confiabilidade e estilo
           em qualquer projeto.</p>
         <a href="#" class="btn btn--filled">Sobre a Novex →</a>
