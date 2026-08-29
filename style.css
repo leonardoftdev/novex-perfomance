@@ -1,12 +1,10 @@
 /* ===================================================================
-   NOVEX PERFORMANCE — style.css
+   NOVEX PERFORMANCE
    Mobile-first: estilos base valem pro celular; @media (min-width)
-   vai "abrindo" o layout conforme a tela cresce.
    =================================================================== */
 
 /* ---------- 1. RESET ---------- */
-/* Zera margens/paddings padrão do navegador e usa border-box em tudo,
-   pra padding e border não somarem à largura que a gente define. */
+
 *,
 *::before,
 *::after {
@@ -938,8 +936,7 @@ input:focus-visible {
 
 
 /* ===================================================================
-   BREAKPOINTS — mobile-first: só ADICIONA/AJUSTA regras conforme
-   a tela cresce, nunca precisa desfazer o que já foi escrito acima.
+                             BREAKPOINTS 
    =================================================================== */
 
 /* ---------- Tablet (≥ 768px) ---------- */

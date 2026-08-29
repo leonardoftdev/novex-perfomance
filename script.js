@@ -35,8 +35,7 @@ if (isFinePointer && !reduceMotion) {
   });
 }
 
-
-
+// === INDICADOR DA NAV ===
 
 const sections = document.querySelectorAll(
   "#hero, #produtos, #tecnologia, #sobre"
