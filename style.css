@@ -96,11 +96,9 @@ input {
   pointer-events: none;
   z-index: 1;
 
-  background: radial-gradient(
-    480px circle at var(--mx, 50%) var(--my, 20%),
-    rgba(255, 255, 255, 0.05),
-    transparent 60%
-  );
+  background: radial-gradient(480px circle at var(--mx, 50%) var(--my, 20%),
+      rgba(255, 255, 255, 0.05),
+      transparent 60%);
 
   opacity: 0;
   transition: opacity 0.6s var(--ease);
@@ -136,15 +134,13 @@ footer[id] {
 
 /* === EFEITO DE CHROME === */
 .chrome-text {
-  background: linear-gradient(
-    100deg,
-    #5c5c61 15%,
-    #c6c6cc 30%,
-    #ffffff 40%,
-    #ffffff 50%,
-    #c6c6cc 60%,
-    #5c5c61 75%
-  );
+  background: linear-gradient(100deg,
+      #5c5c61 15%,
+      #c6c6cc 30%,
+      #ffffff 40%,
+      #ffffff 50%,
+      #c6c6cc 60%,
+      #5c5c61 75%);
 
   background-size: 220% 100%;
 
@@ -439,7 +435,7 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 48px;
-  width: 100vw;
+  width: 100%;
 }
 
 .hero::after {
@@ -483,9 +479,15 @@ input:focus-visible {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
-  max-width: 30px;
   flex-wrap: wrap;
   gap: 16px;
+}
+
+@media (max-width: 767px) {
+    .hero__actions .btn {
+        width: 180px;
+        overflow: hidden;
+    }
 }
 
 .hero__media {
@@ -493,23 +495,6 @@ input:focus-visible {
   display: flex;
   justify-content: center;
   padding-top: 40px;
-}
-
-.hero__image {
-  width: min(100%, 480px);
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6));
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-14px);
-  }
 }
 
 /* Selo circular "feito para performar" */
@@ -521,7 +506,6 @@ input:focus-visible {
   height: 70px;
   border: 1px solid var(--silver-700);
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -623,11 +607,8 @@ input:focus-visible {
 
 .tecnologic-video {
   width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
   object-fit: contain;
   display: block;
-
   max-width: var(--container-max);
   margin-inline: auto;
   border: 1px solid var(--border);
@@ -776,17 +757,17 @@ input:focus-visible {
 
 /* ---------- 10. NEWSLETTER ---------- */
 .newsletter {
+  background-color: var(--panel);
+  background-image: url("images/background.JPG");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   padding: 50px;
   border-radius: var(--radius-md) var(--radius-md) 0px 0px;
   border: 1px solid var(--border);
-
   max-width: var(--container-max);
-  background: var(--panel);
   margin-inline: auto;
-
 }
 
 /* Camada escura por cima da textura, pra o texto continuar legível */
@@ -795,6 +776,7 @@ input:focus-visible {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
+  border-radius: var(--radius-md) var(--radius-md) 0px 0px;
 }
 
 .newsletter__inner {
@@ -803,6 +785,7 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  border-radius: var(--radius-md) var(--radius-md) 0px 0px;
 }
 
 .newsletter__content h2 {
@@ -963,16 +946,11 @@ input:focus-visible {
 
   .hero__actions {
     flex-direction: row;
-    max-width: 800px;
   }
 
   .hero__badge img {
     width: 95px;
     height: 95px;
-  }
-
-  .hero__mediamobile {
-    display: none;
   }
 
   .highlights__list {
@@ -995,7 +973,7 @@ input:focus-visible {
 
   .about-banner {
     flex-direction: row;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/r35.PNG);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/r35.PNG);
   }
 
   .about-banner__content {
