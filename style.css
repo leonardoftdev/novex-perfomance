@@ -304,6 +304,18 @@ input:focus-visible {
   gap: 16px;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header__inner {
+        justify-content: flex-start;
+    }
+
+    .header__actions {
+        margin-left: auto;
+    }
+
+     
+}
+
 .logo img {
   height: 40px;
   width: auto;
