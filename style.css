@@ -432,13 +432,9 @@ input:focus-visible {
 
 /* ---------- 6. HERO ---------- */
 .hero {
-
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/turbina-novex.PNG);
-  background-size: cover;
-  background-position: right;
-  background-repeat: no-repeat;
-
-
+  position: relative;
+  overflow: hidden;
+  background: none;
   max-width: var(--container-max);
   margin-inline: auto;
   padding: calc(var(--section-padding-y) * 0.7) var(--container-padding-x) var(--section-padding-y);
@@ -446,6 +442,30 @@ input:focus-visible {
   flex-direction: column;
   gap: 48px;
   width: 100vw;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.hero__content,
+.hero__media {
+  position: relative;
+  z-index: 2;
 }
 
 .hero__title {
@@ -464,6 +484,8 @@ input:focus-visible {
 .hero__actions {
   margin-top: 32px;
   display: flex;
+  flex-direction: column;
+  max-width: 30px;
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -505,8 +527,8 @@ input:focus-visible {
   align-items: center;
   justify-content: center;
   text-align: center;
-
   animation: spin 18s linear infinite;
+  display: none;
 }
 
 .hero__badge img {
@@ -924,10 +946,11 @@ input:focus-visible {
 @media (min-width: 768px) {
 
   .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(images/turbina-novex.PNG);
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
+    background: none;
+  }
+
+  .hero::after {
+    display: none;
   }
 
   .hero__media {
@@ -937,6 +960,13 @@ input:focus-visible {
   .hero__badge {
     width: 100px;
     height: 100px;
+    display: flex;
+    top: 5px;
+  }
+
+  .hero__actions {
+    flex-direction: row;
+    max-width: 800px;
   }
 
   .hero__badge img {
@@ -1033,20 +1063,24 @@ input:focus-visible {
     align-items: center;
     padding-block: var(--section-padding-y);
     position: relative;
+    background: none;
   }
 
   .hero__content {
     flex: 1;
+    position: relative;
+    z-index: 1;
   }
 
   .hero__media {
     flex: 1;
-    position: static;
+    position: relative;
+    z-index: 1;
   }
 
   .hero__badge {
     right: var(--container-padding-x);
-    bottom: 24px;
+    top: 160px;
   }
 
   .highlights__list {
