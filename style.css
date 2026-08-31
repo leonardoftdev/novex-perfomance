@@ -973,12 +973,6 @@ input:focus-visible {
     /* ← novo: centraliza esse bloco no vão */
   }
 
-  .newsletter {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   .newsletter__inner {
     flex-direction: row;
     align-items: center;

@@ -91,16 +91,17 @@ window.addEventListener("scroll", () => {
 
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
-const navLink = document.querySelectorAll(".nav__link");
 
   menuToggle.addEventListener("click", () => {
       nav.classList.toggle("is-open");
       menuToggle.classList.toggle("is-active");
+      menuToggle.setAttribute("aria-expanded", "true");
   });
 
   navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         nav.classList.remove("is-open");
         menuToggle.classList.remove("is-active");
+        menuToggle.setAttribute("aria-expanded", "false");
       });
   });
