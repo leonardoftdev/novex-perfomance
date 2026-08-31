@@ -358,7 +358,7 @@ input:focus-visible {
   inset: 73px 0 auto 0;
   background: var(--black);
   border-bottom: 1px solid var(--border);
-  max-height: 0;
+  max-height: 0px;
   overflow: hidden;
   transition: max-height 0.35s var(--ease);
 }
@@ -386,32 +386,6 @@ input:focus-visible {
 
 .nav__link {
   position: relative;
-}
-
-.nav__list a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-
-  width: 100%;
-  height: 1px;
-
-  background: var(--white);
-
-  transform: scaleX(0);
-  transform-origin: left;
-
-  transition: transform 0.35s var(--ease);
-}
-
-.nav__list a:hover::after,
-.nav__list a.active::after {
-  transform: scaleX(1);
-}
-
-.nav__list a:hover {
-  color: var(--white);
 }
 
 .header__actions {
@@ -1043,6 +1017,32 @@ input:focus-visible {
     padding: 0;
     border-bottom: none;
     font-size: 0.9rem;
+  }
+
+    .nav__list a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 1px;
+
+    background: var(--white);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.35s var(--ease);
+  }
+
+  .nav__list a:hover::after,
+  .nav__list a.active::after {
+    transform: scaleX(1);
+  }
+
+  .nav__list a:hover {
+    color: var(--white);
   }
 
   .hero {
