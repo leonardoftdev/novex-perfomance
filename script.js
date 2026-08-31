@@ -108,3 +108,13 @@ const nav = document.querySelector(".nav");
         menuToggle.setAttribute("aria-expanded", "false");
       });
   });
+
+// === FECHA O MENU EM CASO DE REDIMENSIONAR A TELA PARA DESKTOP ===
+
+  window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1024) {
+    nav.classList.remove("is-open");
+    menuToggle.classList.remove("is-active");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+});
