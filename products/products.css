@@ -1,49 +1,108 @@
 /* === PRODUCTS PAGE === */
 
 .products-page {
-  width: 100%;
+    width: 100%;
 }
 
 /* === PRODUCTS HERO === */
 
 .products-hero {
-  position: relative;
-  padding: 10px 24px 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  background: #000;
+    position: relative;
+    padding: 10px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding: calc(var(--section-padding-y) * 0.7) var(--container-padding-x) var(--section-padding-y);
+
 }
 
 .products-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 1;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.699);
+    z-index: 1;
 }
 
 .products-hero__content {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 .products-hero__image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 0.9;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.9;
 }
 
 .products-hero__image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === PRODUCTS CATEGORIES === */
+
+.products-categories {
+    padding: 24px;
+    overflow-x: auto;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    margin: 0px 10px;
+    margin-bottom: 10px;
+
+    max-width: var(--container-max);
+    margin-inline: auto;
+}
+
+.products-categories__nav {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+}
+
+.products-categories__link {
+    position: relative;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #666;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.products-categories__link.is-active {
+    color: #fff;
+}
+
+.products-categories__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.products-categories__link.is-active::after {
+    width: 100%;
 }
 
 /* ===================================================================
