@@ -20,12 +20,15 @@
 
 }
 
-.products-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.699);
-    z-index: 1;
+@media (max-width: 768px) {
+
+    .products-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.699);
+        z-index: 1;
+    }
 }
 
 .products-hero__content {
@@ -53,22 +56,27 @@
 /* === PRODUCTS CATEGORIES === */
 
 .products-categories {
-    padding: 24px;
+    padding: 5px;
     overflow-x: auto;
 
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    margin: 0px 10px;
-    margin-bottom: 10px;
 
     max-width: var(--container-max);
-    margin-inline: auto;
+    margin-inline: var(--container-padding-x);
+    margin-bottom: 20px;
+
+    scrollbar-width: none;
+}
+
+.products-categories::-webkit-scrollbar {
+    display: none;
 }
 
 .products-categories__nav {
     display: flex;
-    gap: 24px;
+    gap: 10px;
     width: max-content;
 }
 
@@ -88,23 +96,24 @@
 
 .products-categories__link.is-active {
     color: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--panel);
 }
 
-.products-categories__link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 0;
-    height: 1px;
-    background: #fff;
-    transition: width 0.3s ease;
+.products-categories__icon {
+    width: 42px;
+    height: 35px;
+    vertical-align: middle;
 }
 
-.products-categories__link.is-active::after {
-    width: 100%;
+.products-categories__nav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
 }
-
+    
 /* ===================================================================
                              BREAKPOINTS 
    =================================================================== */
@@ -127,5 +136,9 @@
 
     .hero__text {
         max-width: 480px;
+    }
+
+    .products-categories {
+        margin-inline: auto;
     }
 }
