@@ -1,7 +1,8 @@
 /* === PRODUCTS PAGE === */
 
 .products-page {
-    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
 }
 
 /* === PRODUCTS HERO === */
@@ -78,6 +79,8 @@
     display: flex;
     gap: 10px;
     width: max-content;
+
+    padding: 3px 3px;
 }
 
 .products-categories__link {
@@ -128,6 +131,73 @@
     text-transform: uppercase;
     color: #8a8a8a;
 }
+
+/* === PRODUCTS CATEGORY === */
+
+.products-category {
+    margin-bottom: 48px;
+
+    max-width: var(--container-max);
+    margin-inline: var(--container-padding-x);
+}
+
+.products-category__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+.products-category__header h2 {
+    margin: 0;
+
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.products-category__name-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.products-category__link {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+}
+
+.product-grid {
+    display: flex;
+    gap: 12px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.product-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.product-grid .product-card {
+    flex: 0 0 72%;
+}
+
+.product-card {
+    margin-top: 8px;
+}
     
 /* ===================================================================
                              BREAKPOINTS 
@@ -143,6 +213,10 @@
         line-height: 1.5;
     }
 
+    .product-grid .product-card {
+        flex: 0 0 290px;
+    }
+
 }
 
 /* ---------- Desktop (≥ 1024px) ---------- */
@@ -153,11 +227,4 @@
         max-width: 480px;
     }
 
-    .products-categories {
-        margin-inline: auto;
-    }
-
-    .products-count {
-        margin-inline: auto;
-    }
 }
