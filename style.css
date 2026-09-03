@@ -305,15 +305,15 @@ input:focus-visible {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    .header__inner {
-        justify-content: flex-start;
-    }
+  .header__inner {
+    justify-content: flex-start;
+  }
 
-    .header__actions {
-        margin-left: auto;
-    }
+  .header__actions {
+    margin-left: auto;
+  }
 
-     
+
 }
 
 .logo img {
@@ -441,17 +441,17 @@ input:focus-visible {
   z-index: 0;
   opacity: 0.9;
 
-      -webkit-mask-image:
-        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
-        linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
 
-    -webkit-mask-composite: source-in;
+  -webkit-mask-composite: source-in;
 
-    mask-image:
-        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
-        linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
 
-    mask-composite: intersect;
+  mask-composite: intersect;
 }
 
 .hero__content,
@@ -482,10 +482,10 @@ input:focus-visible {
 }
 
 @media (max-width: 767px) {
-    .hero__actions .btn {
-        width: 180px;
-        overflow: hidden;
-    }
+  .hero__actions .btn {
+    width: 180px;
+    overflow: hidden;
+  }
 }
 
 .hero__media {
@@ -1025,7 +1025,7 @@ input:focus-visible {
     font-size: 0.9rem;
   }
 
-    .nav__list a::after {
+  .nav__list a::after {
     content: "";
     position: absolute;
     left: 0;
